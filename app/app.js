@@ -49,6 +49,7 @@ import authRouter from './routes/auth.route.server.js';
 
 // import api Routes
 import authAPIRouter from './routes/api/auth-api.route.server.js';
+import moviesApiRouter from './routes/api/movies-api.route.server.js'
 
 // Instantiate Express Application
 const app = express();
@@ -127,6 +128,6 @@ app.use('/', authRouter);
 
 //use API routes
 app.use('/api/auth', authAPIRouter);
-
+app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesApiRouter);
 
 export default app;
