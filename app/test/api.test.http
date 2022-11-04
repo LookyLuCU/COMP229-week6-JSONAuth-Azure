@@ -1,0 +1,39 @@
+//just a file the REST cleint recognizes for testing requests
+//copy code from REST client extension
+
+//Click below "Send Request" button once POST details entered - URL, fields, field data
+
+POST http://localhost:3000/api/auth/login HTTP/1.1      //replace with your URL (i.e. localhost:3000) && app.js > api route && api.route > app.use routing post urls ==> somehow routes back to views > content > login.ejs?
+content-type: application/json
+
+{
+    //simulating an application
+    //fields taken from views > content > login.ejs (ie. routes from ProcessLoginPage on auth-api.routes page)
+    //data taken from existing Mongo Atlas user profile
+    "username": "Sam",
+    "password": "123456"
+}
+
+###     //separation tags - needed to send separate requests
+
+POST http://localhost:3000/api/auth/register HTTP/1.1      //replace with your URL (i.e. localhost:3000) && app.js > api route && api.route > app.use routing post urls ==> somehow routes back to views > content > login.ejs?
+content-type: application/json
+
+{
+    //simulating an application
+    //fields taken from views > content > login.ejs (ie. routes from ProcessLoginPage on auth-api.routes page)
+    //data taken from existing Mongo Atlas user profile
+    "username": "smcdonald",
+    "password": "123456",
+    "emailAddress": "smcdonald@yahoo.com",
+    "displayName": "Samuel McDonald"
+}
+
+###
+
+GET http://localhost:3000/api/auth/logout HTTP/1.1      //check router for POST/GET, replace with your URL (i.e. localhost:3000) && app.js > api route && api.route > app.use routing post urls ==> somehow routes back to views > content > login.ejs?
+content-type: application/json
+    //simulating an application
+    //no content needed for this one - will eventually need an id
+
+
